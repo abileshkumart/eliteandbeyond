@@ -14,10 +14,16 @@ import UseCases from "./components/Usecase";
 import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
 import Footer from "./components/footer";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 export default function Home() {
   useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
+    AOS.init({ 
+      duration: 800, 
+      once: true,
+      easing: 'ease-out-cubic',
+      offset: 50,
+    });
   }, []);
 
   return (
@@ -32,6 +38,7 @@ export default function Home() {
       <Testimonials />
       <Contact />
       <Footer />
+      <WhatsAppButton />
     </main>
   );
 }
