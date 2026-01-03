@@ -16,10 +16,29 @@ export default function Contact() {
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
 		setIsSubmitting(true);
-		// Simulate form submission
-		await new Promise((resolve) => setTimeout(resolve, 1500));
+		
+		// Create WhatsApp message with form details
+		const whatsappNumber = '916380001916'; // Your WhatsApp number
+		const message = `🌿 *New Inquiry from Website*
+
+*Name:* ${formState.name}
+*Email:* ${formState.email}
+*Phone:* ${formState.phone || 'Not provided'}
+*Product Interest:* ${formState.productInterest || 'Not specified'}
+
+*Message:*
+${formState.message}`;
+
+		// Encode the message for URL
+		const encodedMessage = encodeURIComponent(message);
+		const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+		
+		// Open WhatsApp in new tab
+		window.open(whatsappUrl, '_blank');
+		
 		setIsSubmitting(false);
 		setIsSubmitted(true);
+		
 		// Reset after 3 seconds
 		setTimeout(() => {
 			setIsSubmitted(false);
@@ -158,10 +177,10 @@ export default function Contact() {
 									<CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 text-green-400" />
 								</div>
 								<h3 className="text-xl sm:text-2xl font-bold text-[#F7E6B5] mb-2">
-									Message Sent!
+									Opening WhatsApp!
 								</h3>
 								<p className="text-[#F5C76A]/80 text-sm sm:text-base">
-									We'll get back to you within 24 hours.
+									Complete sending your message in WhatsApp.
 								</p>
 							</div>
 						) : (

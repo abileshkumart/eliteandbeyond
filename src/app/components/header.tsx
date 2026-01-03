@@ -22,14 +22,14 @@ export default function Header() {
         ? 'bg-[#0D2818]/95 backdrop-blur-md shadow-lg shadow-black/20' 
         : 'bg-[#0D2818]'
     } text-[#FBF0D3]`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
-        <div className="flex items-center space-x-2 font-semibold text-lg group cursor-pointer">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16 sm:h-20">
+        <a href="#home" className="flex-shrink-0 flex items-center group cursor-pointer">
           <img
             src="/E&BLogo.svg"
             alt="Elite & Beyond logo"
-            className="h-12 w-auto object-contain drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] transition-transform duration-300 group-hover:scale-110"
+            className="h-10 sm:h-12 w-auto object-contain drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] transition-transform duration-300 group-hover:scale-110"
           />
-        </div>
+        </a>
 
         <nav className="hidden md:flex space-x-10">
           {navItems.map((item) => (
