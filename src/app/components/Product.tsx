@@ -10,7 +10,7 @@ const products = [
         name: "5 Kg Cocopeat Block",
         useCase: "Soil Conditioning & Horticulture",
         description: "Compressed blocks that expand to 70-75L after hydration. Perfect for large-scale farming operations.",
-        image: "/cocopeat.png",
+        image: "/5kgcoirblock.png",
         features: ["High Expansion Ratio", "Long Shelf Life", "Easy Storage"],
         specs: {
             form: "Compressed block (30 × 30 × 12 cm)",
@@ -29,7 +29,7 @@ const products = [
         name: "120kg Coir Bale",
         useCase: "Commercial Farming",
         description: "Hydraulic compressed bales for industrial-scale agricultural operations and large nurseries.",
-        image: "/cocopetvermiccompost.png",
+        image: "/coirblock.png",
         features: ["High Compression", "Export Ready", "Bulk Orders"],
         specs: {
             weight: "120 kg (± 2 kg)",
@@ -49,7 +49,7 @@ const products = [
         name: "Coconut Chips",
         useCase: "Hydroponics & Orchids",
         description: "100% natural coconut husk chips available in multiple sizes for optimal drainage and aeration.",
-        image: "/cocopeatbrick.png",
+        image: "/coconutchips.png",
         features: ["Multiple Sizes", "Low EC Options", "Excellent Drainage"],
         specs: {
             material: "100% natural coconut husk chips",
@@ -66,7 +66,7 @@ const products = [
         name: "Cold Pressed Coconut Oil",
         useCase: "Food & Wellness",
         description: "Sulphur-free, solar dried virgin coconut oil with natural antioxidants and authentic aroma.",
-        image: "/cocopeat.png",
+        image: "/coldpressoil.png",
         features: ["Sulphur Free", "Cold Pressed", "Natural Aroma"],
         specs: {
             type: "Cold-Pressed Virgin Coconut Oil",
@@ -84,7 +84,7 @@ const products = [
         name: "Sulphur Free Copra",
         useCase: "Edible & Export",
         description: "Premium edible copra, solar dried without chemicals. High oil content with fresh coconut smell.",
-        image: "/cocopeatbrick.png",
+        image: "/copora.png",
         features: ["Chemical Free", "High Oil Content", "Export Quality"],
         specs: {
             type: "Edible Copra",
@@ -157,7 +157,7 @@ export default function ProductsSection() {
                             onClick={() => setSelectedProduct(product)}
                         >
                             {/* Image container */}
-                            <div className="relative h-64 bg-gradient-to-b from-[#F5C76A]/5 to-transparent p-6 flex items-center justify-center overflow-hidden">
+                            <div className="relative h-64 bg-gradient-to-b from-[#F5C76A]/5 to-transparent p-0 flex items-center justify-center overflow-hidden">
                                 <div className="absolute inset-0 bg-[#F5C76A]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                                 
                                 {/* View Details indicator */}
@@ -167,15 +167,12 @@ export default function ProductsSection() {
                                         View Specs
                                     </span>
                                 </div>
-
-                                <div className="relative w-48 h-48">
-                                    <Image
-                                        src={product.image}
-                                        alt={product.name}
-                                        fill
-                                        className="object-contain group-hover:scale-110 transition-transform duration-500"
-                                    />
-                                </div>
+                                <Image
+                                    src={product.image}
+                                    alt={product.name}
+                                    fill
+                                    className="object-contain md:object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                                />
                             </div>
 
                             {/* Content */}
@@ -252,16 +249,15 @@ export default function ProductsSection() {
                         <div className="overflow-y-auto max-h-[90vh]">
                             <div className="grid md:grid-cols-2 gap-0">
                                 {/* Left: Image */}
-                                <div className="relative bg-gradient-to-br from-[#F5C76A]/10 to-[#F5C76A]/5 p-8 flex items-center justify-center min-h-[300px]">
-                                    <div className="relative w-64 h-64">
+                                <div className="relative bg-gradient-to-br from-[#F5C76A]/10 to-[#F5C76A]/5 p-8 flex items-center justify-center min-h-[300px] aspect-square">
+                                    <div className="relative w-full h-full flex items-center justify-center">
                                         <Image
                                             src={selectedProduct.image}
                                             alt={selectedProduct.name}
                                             fill
-                                            className="object-contain"
+                                            className="object-contain w-full h-full"
                                         />
                                     </div>
-                                    
                                     {/* Decorative elements */}
                                     <div className="absolute top-4 left-4 w-20 h-20 border-t-2 border-l-2 border-[#F5C76A]/30 rounded-tl-3xl"></div>
                                     <div className="absolute bottom-4 right-4 w-20 h-20 border-b-2 border-r-2 border-[#F5C76A]/30 rounded-br-3xl"></div>

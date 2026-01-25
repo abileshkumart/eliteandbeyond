@@ -34,6 +34,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: "/ebicon.png",
+  },
 };
 
 export default function RootLayout({
